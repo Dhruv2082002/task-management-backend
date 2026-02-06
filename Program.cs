@@ -82,8 +82,11 @@ builder.Services.AddAuthentication(options =>
 // Custom Services
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<TaskService>();
+builder.Services.AddMemoryCache();
 
 var app = builder.Build();
+
+app.UseMiddleware<TaskManagement.Backend.Middleware.ExceptionHandlingMiddleware>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

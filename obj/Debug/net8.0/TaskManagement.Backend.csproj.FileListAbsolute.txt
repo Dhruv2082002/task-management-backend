@@ -139,3 +139,4 @@ D:\Projects\TaskManagement Tutorial\Task Management Backend\obj\Debug\net8.0\ref
 D:\Projects\TaskManagement Tutorial\Task Management Backend\obj\Debug\net8.0\TaskManagement.Backend.pdb
 D:\Projects\TaskManagement Tutorial\Task Management Backend\obj\Debug\net8.0\TaskManagement.Backend.genruntimeconfig.cache
 D:\Projects\TaskManagement Tutorial\Task Management Backend\obj\Debug\net8.0\ref\TaskManagement.Backend.dll
+D:\Projects\TaskManagement Tutorial\Task Management Backend\obj\Debug\net8.0\TaskManagement.Backend.sourcelink.json

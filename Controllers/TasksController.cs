@@ -33,6 +33,7 @@ public class TasksController : ControllerBase
     }
 
     [HttpPost]
+    [TaskManagement.Backend.Middleware.Idempotency]
     public async Task<ActionResult<TodoTaskDto>> CreateTask(CreateTaskDto dto)
     {
         var task = await _taskService.CreateTaskAsync(GetUserId(), dto);
