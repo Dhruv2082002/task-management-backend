@@ -35,8 +35,7 @@ public class ExceptionHandlingMiddleware
         var response = new
         {
             StatusCode = context.Response.StatusCode,
-            Message = "Internal Server Error from the custom middleware.",
-            Detailed = exception.Message // In production, you might hide this
+            Message = "An unexpected error occurred. Please try again later."
         };
 
         return context.Response.WriteAsync(JsonSerializer.Serialize(response));

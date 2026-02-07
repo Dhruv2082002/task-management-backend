@@ -2,6 +2,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using TaskManagement.Backend.Dtos;
+using TaskManagement.Backend.Middleware;
 using TaskManagement.Backend.Services;
 
 namespace TaskManagement.Backend.Controllers;
@@ -26,32 +27,32 @@ public class TasksController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TodoTaskDto>>> GetTasks()
+    public async Task<ActionResult<IEnumerable<TodoTaskDto>>> GetTasks(CancellationToken cancellationToken)
     {
-        var tasks = await _taskService.GetTasksAsync(GetUserId());
+        var tasks = await _taskService.GetTasksAsync(GetUserId(), cancellationToken);
         return Ok(tasks);
     }
 
     [HttpPost]
-    [TaskManagement.Backend.Middleware.Idempotency]
-    public async Task<ActionResult<TodoTaskDto>> CreateTask(CreateTaskDto dto)
+    [Idempotency]
+    public async Task<ActionResult<TodoTaskDto>> CreateTask(CreateTaskDto dto, CancellationToken cancellationToken)
     {
-        var task = await _taskService.CreateTaskAsync(GetUserId(), dto);
+        var task = await _taskService.CreateTaskAsync(GetUserId(), dto, cancellationToken);
         return CreatedAtAction(nameof(GetTasks), new { id = task.Id }, task);
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<TodoTaskDto>> UpdateTask(int id, UpdateTaskDto dto)
+    public async Task<ActionResult<TodoTaskDto>> UpdateTask(int id, UpdateTaskDto dto, CancellationToken cancellationToken)
     {
-        var task = await _taskService.UpdateTaskAsync(GetUserId(), id, dto);
+        var task = await _taskService.UpdateTaskAsync(GetUserId(), id, dto, cancellationToken);
         if (task == null) return NotFound();
         return Ok(task);
     }
 
     [HttpDelete("{id}")]
-    public async Task<ActionResult> DeleteTask(int id)
+    public async Task<ActionResult> DeleteTask(int id, CancellationToken cancellationToken)
     {
-        var result = await _taskService.DeleteTaskAsync(GetUserId(), id);
+        var result = await _taskService.DeleteTaskAsync(GetUserId(), id, cancellationToken);
         if (!result) return NotFound();
         return NoContent();
     }

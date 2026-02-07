@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\TaskManagement.Backend.csproj": {}
+    "d:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\TaskManagement.Backend.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\TaskManagement.Backend.csproj": {
+    "d:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\TaskManagement.Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\TaskManagement.Backend.csproj",
+        "projectUniqueName": "d:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\TaskManagement.Backend.csproj",
         "projectName": "TaskManagement.Backend",
-        "projectPath": "D:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\TaskManagement.Backend.csproj",
+        "projectPath": "d:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\TaskManagement.Backend.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\obj\\",
+        "outputPath": "d:\\Projects\\TaskManagement Tutorial\\Task Management Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
